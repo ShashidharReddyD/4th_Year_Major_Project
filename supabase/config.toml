@@ -1,0 +1,7 @@
+project_id = "vbiexruoiwjsuaazbpbl"
+
+[functions.chat-assistant]
+verify_jwt = false
+
+[functions.send-parent-report]
+verify_jwt = false

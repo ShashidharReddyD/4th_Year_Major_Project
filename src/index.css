@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Educational Design System - Primary School Theme */
+
+@layer base {
+  :root {
+    /* Educational Color Palette */
+    --background: 240 10% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Educational Blue Primary */
+    --primary: 217 91% 59%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 91% 54%;
+
+    /* Warm Orange Secondary */
+    --secondary: 25 95% 53%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-hover: 25 95% 48%;
+
+    /* Success Green */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning Yellow */
+    --warning: 43 96% 56%;
+    --warning-foreground: 222.2 84% 4.9%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 217 91% 59%;
+
+    /* Educational Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 59%), hsl(217 91% 54%));
+    --gradient-secondary: linear-gradient(135deg, hsl(25 95% 53%), hsl(25 95% 48%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 59%) 0%, hsl(25 95% 53%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(240 10% 98%) 100%);
+
+    /* Shadows */
+    --shadow-card: 0 4px 6px -1px hsl(217 91% 59% / 0.1), 0 2px 4px -1px hsl(217 91% 59% / 0.06);
+    --shadow-hover: 0 10px 15px -3px hsl(217 91% 59% / 0.15), 0 4px 6px -2px hsl(217 91% 59% / 0.1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  /* Educational Card Components */
+  .card-educational {
+    @apply bg-card border border-border rounded-lg shadow-[var(--shadow-card)] transition-all duration-300;
+    background: var(--gradient-card);
+  }
+
+  .card-educational:hover {
+    @apply shadow-[var(--shadow-hover)] transform -translate-y-1;
+  }
+
+  /* Hero Button Variants */
+  .btn-hero {
+    @apply bg-primary text-primary-foreground hover:bg-[hsl(var(--primary-hover))] rounded-lg px-6 py-3 font-semibold transition-all duration-300 shadow-[var(--shadow-card)];
+    background: var(--gradient-primary);
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-[hsl(var(--secondary-hover))] rounded-lg px-6 py-3 font-semibold transition-all duration-300 shadow-[var(--shadow-card)];
+    background: var(--gradient-secondary);
+  }
+
+  .btn-success {
+    @apply bg-success text-success-foreground hover:opacity-90 rounded-lg px-4 py-2 font-medium transition-all duration-300;
+  }
+
+  /* Dashboard Layouts */
+  .dashboard-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+
+  .sidebar-nav {
+    @apply w-64 bg-card border-r border-border h-screen fixed left-0 top-0 pt-20 px-4 space-y-2;
+  }
+
+  .main-content {
+    @apply ml-64 p-6 min-h-screen;
+  }
+
+  /* Form Styling */
+  .form-group {
+    @apply space-y-2;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring transition-all duration-200;
+  }
+
+  /* Animations */
+  .animate-slide-in {
+    @apply animate-[slideIn_0.3s_ease-out];
+  }
+
+  .animate-fade-in {
+    @apply animate-[fadeIn_0.5s_ease-out];
+  }
+
+  .animate-scale-in {
+    @apply animate-[scaleIn_0.2s_ease-out];
+  }
+
+  /* Status Badges */
+  .badge-success {
+    @apply bg-success text-success-foreground px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-warning {
+    @apply bg-warning text-warning-foreground px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-info {
+    @apply bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium;
+  }
+}
